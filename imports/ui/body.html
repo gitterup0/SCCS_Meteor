@@ -1,0 +1,45 @@
+ <body>
+   <div class="container">
+     <div class="row">
+       <h3 class="text-center" >CAT CHAT</h3>
+ 	   	<!-- sign in -->
+    <h5 class="text-center text-muted">Sign in</h5>
+       <div class="col-md-12">
+ 		<!-- login button -->
+      {{> loginButtons}}
+         <div class="panel panel-info">
+      <!-- title here -->
+               <!-- message template -->
+           <div class="panel-heading">
+            </div>
+                <ul class="media-list">
+
+               {{#each messages}}
+                 {{> like}}
+                 {{> message}} 
+                 <br>
+                  {{/each}}
+             </ul>
+          </div>
+             <!-- <ul class="like-list"> -->
+               <!-- message template -->
+<!--                {{#each likes}}
+                 {{> like}} 
+               {{/each}}
+             </ul> -->
+           {{#if currentUser}}
+           <form class="new-message">
+             <div class="panel-footer">
+               <div class="input-group">
+                 <input type="text" name="text" class="form-control" placeholder="Enter Message" />
+                 <span class="input-group-btn">
+                   <button class="btn btn-info send" type="submit">SEND</button>
+                 </span>
+               </div>
+             </div>
+           </form>
+           {{/if}}
+         </div>
+       </div>
+     </div>
+ </body>
